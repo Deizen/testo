@@ -22,11 +22,11 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	      @hasrole('admin')
-	      <li><a href="{{url('editarEmpresa')}}">Configuracion empresa</a></li>
+	      <li><a href="{{url('usuarios')}}">Usuarios</a></li>
 	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Usuarios<span class="caret"></span></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Catalogos<span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu">
-	            <li><a href="{{url('registrarAlumnos')}}">Registro de Usuarios</a></li>
+	            <li><a href="{{url('editarEmpresa')}}">Configuracion de empresa</a></li>
 	            <li><a href="{{url('consultarAlumnos')}}">Consultar Usuarios</a></li>
 	          </ul>
 	        </li>
