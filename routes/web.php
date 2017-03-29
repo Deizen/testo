@@ -18,9 +18,9 @@ Route::get('/', function ()
 
 //Configuracion de empresa
 
-Route::get('/configEmpresa/','editarEmpresaController@editarEmpresa');
+Route::get('/editarEmpresa/','editarEmpresaController@editarEmpresa');
 
-Route::get('/actualizarEmpresa/{id}','editarEmpresaController@actualizarEmpresa');
+Route::post('/actualizarEmpresa/','editarEmpresaController@actualizarEmpresa');
 
 //Route::get('/registrarAlumnos','alumnosController@registrarAlumnos');
 
@@ -35,3 +35,8 @@ Route::get('/actualizarEmpresa/{id}','editarEmpresaController@actualizarEmpresa'
 //Route::get('actualizarAlumno/{id}','alumnosController@actualizarAlumno');
 Auth::routes();
 
+
+Route::get('/home', function () 
+{
+    return view('home');
+});

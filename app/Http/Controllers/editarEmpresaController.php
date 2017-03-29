@@ -6,21 +6,21 @@ use Illuminate\Http\Request;
 use App\DatosEmpresa;
 use DB;
 
-class datosEmpresaController extends Controller
+class editarEmpresaController extends Controller
 {
 
 
     public function editarEmpresa(){
-        $Empresa=Empresa::find(1);
+        $Empresa=DatosEmpresa::find(1);
         return view('editarEmpresa',compact('Empresa'));
     }
 
-    public function actualizarEmpresa(Request $datos, $id){
-        $Empresa==Empresa::find($id);
+    public function actualizarEmpresa(Request $datos){
+        $Empresa=DatosEmpresa::find(1);
         $Empresa->nombre=$datos->input('nombre');
         $Empresa->rfc=$datos->input('rfc');
         $Empresa->direccion=$datos->input('direccion');
-        $Empresa->estadp=$datos->input('estado');
+        $Empresa->estado=$datos->input('estado');
         $Empresa->municipio=$datos->input('municipio');
         $Empresa->localidad=$datos->input('localidad');
         $Empresa->email=$datos->input('email');
@@ -28,7 +28,7 @@ class datosEmpresaController extends Controller
         $Empresa->codigo_postal=$datos->input('codigo_postal');
         $Empresa->save();
 
-        return Redirect('/configEmpresa');
+        return Redirect('/editarEmpresa');
     }
 
 }
