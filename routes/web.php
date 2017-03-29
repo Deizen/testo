@@ -22,17 +22,19 @@ Route::get('/editarEmpresa/','editarEmpresaController@editarEmpresa');
 
 Route::post('/actualizarEmpresa/','editarEmpresaController@actualizarEmpresa');
 
-//Route::get('/registrarAlumnos','alumnosController@registrarAlumnos');
+//Usuarios
 
-//Route::post('/guardarAlumno','alumnosController@guardarAlumno');
+Route::get('/consultarUsuarios','usuariosController@consultarUsuarios');
 
-//Route::get('/eliminarAlumno/{id}','alumnosController@eliminarAlumno');
+Route::get('/registrarUsuario','usuariosController@registrarUsuario');
 
-//Route::get('/consultarAlumnos','alumnosController@consultarAlumnos');
+Route::post('/guardarUsuario','usuariosController@guardarUsuario');
 
-//Route::get('/editarAlumno/{id}','alumnosController@editarAlumno');
+Route::get('/eliminarUsuario/{id}','usuariosController@eliminarUsuario');
 
-//Route::get('actualizarAlumno/{id}','alumnosController@actualizarAlumno');
+Route::get('/editarUsuario/{id}','usuariosController@editarUsuario');
+
+Route::post('/actualizarUsuario/{id}','usuariosController@actualizarUsuario');
 Auth::routes();
 
 
