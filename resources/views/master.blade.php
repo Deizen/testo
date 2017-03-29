@@ -16,12 +16,13 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#"><b>AdminLC</b</a>
+	      <a class="navbar-brand" href="{{url('/')}}"><b>AdminLC</b</a>
 	    </div>
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	      @hasrole('admin')
+	      <li><a href="{{url('configEmpresa')}}/{{1}}">Configuracion empresa</a></li>
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Usuarios<span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu">

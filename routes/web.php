@@ -16,22 +16,22 @@ Route::get('/', function ()
     return view('home');
 });
 
-Route::get('/registrarAlumnos','alumnosController@registrarAlumnos');
+//Configuracion de empresa
 
-Route::get ('grupo2', function() 
-{ 
-		return view('grupo2/home');
-});
+Route::get('/configEmpresa/','editarEmpresaController@editarEmpresa');
 
-Route::post('/guardarAlumno','alumnosController@guardarAlumno');
+Route::get('/actualizarEmpresa/{id}','editarEmpresaController@actualizarEmpresa');
 
-Route::get('/eliminarAlumno/{id}','alumnosController@eliminarAlumno');
+//Route::get('/registrarAlumnos','alumnosController@registrarAlumnos');
 
-Route::get('/consultarAlumnos','alumnosController@consultarAlumnos');
+//Route::post('/guardarAlumno','alumnosController@guardarAlumno');
 
-Route::get('/editarAlumno/{id}','alumnosController@editarAlumno');
+//Route::get('/eliminarAlumno/{id}','alumnosController@eliminarAlumno');
 
-Route::get('actualizarAlumno/{id}','alumnosController@actualizarAlumno');
+//Route::get('/consultarAlumnos','alumnosController@consultarAlumnos');
+
+//Route::get('/editarAlumno/{id}','alumnosController@editarAlumno');
+
+//Route::get('actualizarAlumno/{id}','alumnosController@actualizarAlumno');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
