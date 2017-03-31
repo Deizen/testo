@@ -28,6 +28,7 @@
 	          <ul class="dropdown-menu" role="menu">
 	            <li><a href="{{url('editarEmpresa')}}">Configuracion de empresa</a></li>
 	            <li><a href="{{url('consultarSucursales')}}">Sucursales</a></li>
+	            <li><a href="{{url('consultarClientes')}}">Clientes</a></li>
 	          </ul>
 	        </li>
 	      @endhasrole

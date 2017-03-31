@@ -52,6 +52,20 @@ Route::get('/editarSucursal/{id}','sucursalesController@editarSucursal');
 
 Route::post('/actualizarSucursal/{id}','sucursalesController@actualizarSucursal');
 
+//Clientes
+
+Route::get('/consultarClientes','clientesController@consultarClientes');
+
+Route::get('/registrarCliente','clientesController@registrarCliente');
+
+Route::post('/guardarCliente','clientesController@guardarCliente');
+
+Route::get('/eliminarCliente/{id}','clientesController@eliminarCliente');
+
+Route::get('/editarCliente/{id}','clientesController@editarCliente');
+
+Route::post('/actualizarCliente/{id}','clientesController@actualizarCliente');
+
 
 Route::get('/home', function () 
 {

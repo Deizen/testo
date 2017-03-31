@@ -2,7 +2,7 @@
 
 @section('titulo')
 @hasrole('admin')
-	<h2>Sucursales</h2>
+	<h2>Clientes</h2>
 @endhasrole
 @stop
 
@@ -20,31 +20,35 @@
 				<th>Estado</th>
 				<th>Municipio</th>
 				<th>Telefono</th>
-				<th>Encargado</th>
+				<th>Contacto</th>
+				<th>Email Contacto</th>
+				<th>Telefono Contacto</th>
 				<th>
-					<a href="{{url('/registrarSucursal')}}" class="btn btn-success">Nueva sucursal</a>
+					<a href="{{url('/registrarCliente')}}" class="btn btn-success">Nuevo cliente</a>
 				</th>
 			</thead>
 			<tbody>
-				@foreach($sucursales as $s)
+				@foreach($clientes as $c)
 					<tr>
-						<td>{{$s->id}}</td>
-						<td>{{$s->nombre}}</td>
-						<td>{{$s->direccion}}</td>
-						<td>{{$s->estado}}</td>
-						<td>{{$s->municipio}}</td>
-						<td>{{$s->telefono}}</td>
-						<td>{{$s->encargado}}</td>
+						<td>{{$c->id}}</td>
+						<td>{{$c->nombre}}</td>
+						<td>{{$c->direccion}}</td>
+						<td>{{$c->estado}}</td>
+						<td>{{$c->municipio}}</td>
+						<td>{{$c->telefono}}</td>
+						<td>{{$c->contacto}}</td>
+						<td>{{$c->email_contacto}}</td>
+						<td>{{$c->telefono_contacto}}</td>
 						<td>
-							<a href="{{url('/editarSucursal')}}/{{$s->id}}" class="btn btn-xs btn-primary">
+							<a href="{{url('/editarCliente')}}/{{$c->id}}" class="btn btn-xs btn-primary">
 								  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 							</a>
 
-							<a href="{{url('/eliminarSucursal')}}/{{$s->id}}" class="btn btn-danger btn-xs">
+							<a href="{{url('/eliminarCliente')}}/{{$c->id}}" class="btn btn-danger btn-xs">
 								  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 							</a>
 								
-						<!--	<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal" data="{{$s->id}}">
+						<!--	<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal" data="{{$c->id}}">
 									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 							</button>
 						</td>-->
@@ -65,7 +69,7 @@
 					      </div>
 					      <div class="modal-footer">
 					        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					       <a href="{{url('/eliminarSucursal')}}/{{$s->id}}" class="btn btn-danger">Eliminar</a>
+					       <a href="{{url('/eliminarSucursal')}}/{{$c->id}}" class="btn btn-danger">Eliminar</a>
 					      </div>
 					    </div>
 					  </div>
@@ -73,7 +77,7 @@
 
 				@endforeach
 				<div class="text-center">
-					{{$sucursales->links()}}
+					{{$clientes->links()}}
 				</div>
 			</tbody>
 		</table>
