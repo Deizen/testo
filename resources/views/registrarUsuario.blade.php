@@ -8,6 +8,7 @@
 @stop
 
 @section('contenido')
+@hasrole('admin')
 	<div class="col-xs-12">
 		<form action="{{url('/guardarUsuario')}}" method="POST">
 			<input type="hidden" name="_token" value="{{csrf_token() }}">

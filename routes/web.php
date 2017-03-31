@@ -66,6 +66,20 @@ Route::get('/editarCliente/{id}','clientesController@editarCliente');
 
 Route::post('/actualizarCliente/{id}','clientesController@actualizarCliente');
 
+//Cajas
+
+Route::get('/consultarCajas','cajasController@consultarCajas');
+
+Route::get('/registrarCaja','cajasController@registrarCaja');
+
+Route::post('/guardarCaja','cajasController@guardarCaja');
+
+Route::get('/eliminarCaja/{id}','cajasController@eliminarCaja');
+
+Route::get('/editarCaja/{id}','cajasController@editarCaja');
+
+Route::post('/actualizarCaja/{id}','cajasController@actualizarCaja');
+
 
 Route::get('/home', function () 
 {
