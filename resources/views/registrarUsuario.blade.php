@@ -45,7 +45,7 @@
 
 			<div class="form-group">
 				<label for="descuento_maximo">Descuento maximo</label>
-				<input name="descuento_maximo" type="number" placeholder="Teclea confirmacion de contraseña" class="form-control" required>
+				<input name="descuento_maximo" type="number" placeholder="Teclea descuento maximo" class="form-control" required>
 			</div>
 
 			<button type="submit" class="btn btn-primary">Registrar</button>

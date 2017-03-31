@@ -35,7 +35,22 @@ Route::get('/eliminarUsuario/{id}','usuariosController@eliminarUsuario');
 Route::get('/editarUsuario/{id}','usuariosController@editarUsuario');
 
 Route::post('/actualizarUsuario/{id}','usuariosController@actualizarUsuario');
+
 Auth::routes();
+
+//Sucursales
+
+Route::get('/consultarSucursales','sucursalesController@consultarSucursales');
+
+Route::get('/registrarSucursal','sucursalesController@registrarSucursal');
+
+Route::post('/guardarSucursal','sucursalesController@guardarSucursal');
+
+Route::get('/eliminarSucursal/{id}','sucursalesController@eliminarSucursal');
+
+Route::get('/editarSucursal/{id}','sucursalesController@editarSucursal');
+
+Route::post('/actualizarSucursal/{id}','sucursalesController@actualizarSucursal');
 
 
 Route::get('/home', function () 
