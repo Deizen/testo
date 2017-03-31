@@ -1,10 +1,16 @@
 @extends('master')
 
 @section('titulo')
+@hasrole('admin')
 	<h2>Sucursales</h2>
+@endhasrole
 @stop
 
+
+
 @section('contenido')
+
+@hasrole('admin')
 	<div class="col-xs-12">
 		<table class="table table-hover">
 			<thead>
@@ -72,5 +78,10 @@
 			</tbody>
 		</table>
 	</div>
+@else
+    <div class="jumbotron">
+        <h1>Error - Pagina no encontrada</h1>
+    </div>
+@endhasrole
 
 @stop

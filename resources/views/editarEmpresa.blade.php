@@ -1,11 +1,14 @@
 @extends ('master')
 
 @section('titulo')
+@hasrole('admin')
 	<h2>Configuracion de empresa</h2>
 	<hr>
+@endhasrole
 @stop
 
 @section('contenido')
+@hasrole('admin')
 	<div class="col-xs-12">
 		<form action="{{url('/actualizarEmpresa')}}" method="POST">
 			<input type="hidden" name="_token" value="{{csrf_token() }}">
@@ -49,4 +52,11 @@
 			<a href="{{url('/')}}" class="btn btn-danger">Cancelar</a>						
 		</form>
 	</div>
+
+@else
+    <div class="jumbotron">
+        <h1>Error - Pagina no encontrada</h1>
+    </div>
+@endhasrole
+
 @stop

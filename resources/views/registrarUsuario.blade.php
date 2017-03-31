@@ -1,8 +1,10 @@
 @extends ('master')
 
 @section('titulo')
+@hasrole('admin')
 	<h2>Registro de Usuario</h2>
 	<hr>
+@endhasrole
 @stop
 
 @section('contenido')
@@ -52,4 +54,10 @@
 			<a href="{{url('/consultarUsuarios')}}" class="btn btn-danger">Cancelar</a>						
 		</form>
 	</div>
+
+@else
+    <div class="jumbotron">
+        <h1>Error - Pagina no encontrada</h1>
+    </div>
+@endhasrole
 @stop
