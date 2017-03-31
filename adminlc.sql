@@ -2,10 +2,10 @@
 -- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 29, 2017 at 05:51 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 31-03-2017 a las 17:34:00
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,41 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `adminlc`
+-- Base de datos: `adminlc`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu_items`
+-- Estructura de tabla para la tabla `datos_empresa`
+--
+
+CREATE TABLE `datos_empresa` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `rfc` varchar(50) NOT NULL,
+  `direccion` varchar(200) NOT NULL,
+  `estado` varchar(200) NOT NULL,
+  `municipio` varchar(200) NOT NULL,
+  `localidad` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `telefono` varchar(10) NOT NULL,
+  `codigo_postal` int(5) NOT NULL,
+  `updated_at` date NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `datos_empresa`
+--
+
+INSERT INTO `datos_empresa` (`id`, `nombre`, `rfc`, `direccion`, `estado`, `municipio`, `localidad`, `email`, `telefono`, `codigo_postal`, `updated_at`, `created_at`) VALUES
+(1, 'Isaac Osuna', 'OUZE921106QZ9', 'Cerro de la cruz 290-B', 'Sinaloa', 'Culiacan', 'Culiacan Rosales', 'eddieisaac@gmail.com', '667328194', 80199, '2017-03-29', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `menu_items`
 --
 
 CREATE TABLE `menu_items` (
@@ -42,7 +70,7 @@ CREATE TABLE `menu_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `menu_items`
+-- Volcado de datos para la tabla `menu_items`
 --
 
 INSERT INTO `menu_items` (`id`, `name`, `type`, `link`, `page_id`, `parent_id`, `lft`, `rgt`, `depth`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -51,7 +79,7 @@ INSERT INTO `menu_items` (`id`, `name`, `type`, `link`, `page_id`, `parent_id`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Estructura de tabla para la tabla `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -61,7 +89,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Volcado de datos para la tabla `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -74,7 +102,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pages`
+-- Estructura de tabla para la tabla `pages`
 --
 
 CREATE TABLE `pages` (
@@ -93,7 +121,7 @@ CREATE TABLE `pages` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Estructura de tabla para la tabla `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -103,7 +131,7 @@ CREATE TABLE `password_resets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `password_resets`
+-- Volcado de datos para la tabla `password_resets`
 --
 
 INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
@@ -112,7 +140,7 @@ INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permissions`
+-- Estructura de tabla para la tabla `permissions`
 --
 
 CREATE TABLE `permissions` (
@@ -123,7 +151,7 @@ CREATE TABLE `permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `permissions`
+-- Volcado de datos para la tabla `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -133,7 +161,7 @@ INSERT INTO `permissions` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Estructura de tabla para la tabla `roles`
 --
 
 CREATE TABLE `roles` (
@@ -144,16 +172,18 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Volcado de datos para la tabla `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'admin', NULL, NULL);
+(1, 'admin', NULL, NULL),
+(2, 'cajero', NULL, NULL),
+(3, 'medico', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role_has_permissions`
+-- Estructura de tabla para la tabla `role_has_permissions`
 --
 
 CREATE TABLE `role_has_permissions` (
@@ -164,7 +194,34 @@ CREATE TABLE `role_has_permissions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Estructura de tabla para la tabla `sucursales`
+--
+
+CREATE TABLE `sucursales` (
+  `id` int(9) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `estado` varchar(100) NOT NULL,
+  `municipio` varchar(100) NOT NULL,
+  `localidad` varchar(100) NOT NULL,
+  `telefono` varchar(12) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `encargado` varchar(100) NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `sucursales`
+--
+
+INSERT INTO `sucursales` (`id`, `nombre`, `direccion`, `estado`, `municipio`, `localidad`, `telefono`, `email`, `encargado`, `created_at`, `updated_at`) VALUES
+(1, 'Lomitas', 'En algun lugar', 'Sinaloa', 'Culiacan', 'Culiacan Rosales', '6673281945', 'eddieisaac@gmail.com', 'Nadie', '2017-03-31', '2017-03-31');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
 --
 
 CREATE TABLE `users` (
@@ -172,23 +229,25 @@ CREATE TABLE `users` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `descuento_maximo` int(3) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Isaac Osunaz', 'eddieisaac@gmail.com', '$2y$10$ySsrCXyxAw6cR5AiEki3/uSaW6GPMhFCFonBObdnjNUuUPnmHv0ZS', 'JvzrXemXEomgL1FZHWHM31g7HuQYL019uWIQjJ7yu4nbgpyOskqvcstUEc2s', '2017-03-25 02:43:39', '2017-03-27 23:34:49'),
-(2, 'Javier Garcia', 'javi@javi.com', '123456', NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `remember_token`, `descuento_maximo`, `created_at`, `updated_at`) VALUES
+(9, 'otro', 'mas@mas.com', '$2y$10$6DtKMh/EeZR1Nuo12z9gUu5Fn.ZeMQA9vNrMjIA2qAXB.IXX8PAKu', 'medico', 'xqHteFMpahAbxOCkq9Jokb3jEvwABCfXvdhIbXQFA7baZkByoklEHu7FqYyA', 1, '2017-03-30 04:57:46', '2017-03-30 05:56:20'),
+(10, 'Isaac Osuna', 'eddieisaac@gmail.com', '$2y$10$lxfANa.KshQz9qf1N3z0Tu1wXaG7HF/U2pIYUAKmkr.18QlYDYqDS', 'admin', 'tqsknbXcqVyrFVV2pB0CNP68MO72bG1XaJOBj2nZcczXj9a5G45EYvvRRXP4', 100, '2017-03-30 05:01:44', '2017-03-30 05:01:44');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_has_permissions`
+-- Estructura de tabla para la tabla `user_has_permissions`
 --
 
 CREATE TABLE `user_has_permissions` (
@@ -196,18 +255,10 @@ CREATE TABLE `user_has_permissions` (
   `permission_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `user_has_permissions`
---
-
-INSERT INTO `user_has_permissions` (`user_id`, `permission_id`) VALUES
-(1, 3),
-(1, 4);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_has_roles`
+-- Estructura de tabla para la tabla `user_has_roles`
 --
 
 CREATE TABLE `user_has_roles` (
@@ -216,136 +267,160 @@ CREATE TABLE `user_has_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user_has_roles`
+-- Volcado de datos para la tabla `user_has_roles`
 --
 
 INSERT INTO `user_has_roles` (`role_id`, `user_id`) VALUES
-(1, 1);
+(1, 10),
+(3, 9);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `menu_items`
+-- Indices de la tabla `datos_empresa`
+--
+ALTER TABLE `datos_empresa`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `menu_items`
 --
 ALTER TABLE `menu_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Indices de la tabla `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pages`
+-- Indices de la tabla `pages`
 --
 ALTER TABLE `pages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Indices de la tabla `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `permissions`
+-- Indices de la tabla `permissions`
 --
 ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `permissions_name_unique` (`name`);
 
 --
--- Indexes for table `roles`
+-- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_name_unique` (`name`);
 
 --
--- Indexes for table `role_has_permissions`
+-- Indices de la tabla `role_has_permissions`
 --
 ALTER TABLE `role_has_permissions`
   ADD PRIMARY KEY (`permission_id`,`role_id`),
   ADD KEY `role_has_permissions_role_id_foreign` (`role_id`);
 
 --
--- Indexes for table `users`
+-- Indices de la tabla `sucursales`
+--
+ALTER TABLE `sucursales`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD KEY `role` (`role`);
 
 --
--- Indexes for table `user_has_permissions`
+-- Indices de la tabla `user_has_permissions`
 --
 ALTER TABLE `user_has_permissions`
   ADD PRIMARY KEY (`user_id`,`permission_id`),
   ADD KEY `user_has_permissions_permission_id_foreign` (`permission_id`);
 
 --
--- Indexes for table `user_has_roles`
+-- Indices de la tabla `user_has_roles`
 --
 ALTER TABLE `user_has_roles`
   ADD PRIMARY KEY (`role_id`,`user_id`),
   ADD KEY `user_has_roles_user_id_foreign` (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `menu_items`
+-- AUTO_INCREMENT de la tabla `datos_empresa`
+--
+ALTER TABLE `datos_empresa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `menu_items`
 --
 ALTER TABLE `menu_items`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `pages`
+-- AUTO_INCREMENT de la tabla `pages`
 --
 ALTER TABLE `pages`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `permissions`
+-- AUTO_INCREMENT de la tabla `permissions`
 --
 ALTER TABLE `permissions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT de la tabla `sucursales`
+--
+ALTER TABLE `sucursales`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `role_has_permissions`
+-- Filtros para la tabla `role_has_permissions`
 --
 ALTER TABLE `role_has_permissions`
   ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `user_has_permissions`
+-- Filtros para la tabla `user_has_permissions`
 --
 ALTER TABLE `user_has_permissions`
   ADD CONSTRAINT `user_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `user_has_permissions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `user_has_roles`
+-- Filtros para la tabla `user_has_roles`
 --
 ALTER TABLE `user_has_roles`
   ADD CONSTRAINT `user_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE,
