@@ -179,6 +179,7 @@ return [
 
         //Otros
         Spatie\Permission\PermissionServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
 
     ],
 

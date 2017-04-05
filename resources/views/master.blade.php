@@ -68,7 +68,7 @@
 	</div>
 	<footer class="text-center">
 		<hr>
-		Isaac Osuna &copy; 2017
+		AdminLC &copy; 2017
 	</footer>
 	<script src="{{asset("js/jquery-3.1.1.js")}}"></script>
 	<script src="{{asset("js/bootstrap.min.js")}}"></script>
