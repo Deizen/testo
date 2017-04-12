@@ -15,7 +15,7 @@
 
 
 			<div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}">
-				<label for="nombre">Nombre:</label>
+				<label for="nombre">Nombre de tu jefa:</label>
 				<input name="nombre" type="text" value="{{$cliente->nombre}}" placeholder="Teclea nombre" class="form-control" required autofocus>
 				@if ($errors->has('nombre'))
                     <span class="help-block">
