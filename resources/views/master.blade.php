@@ -30,6 +30,7 @@
 	            <li><a href="{{url('consultarSucursales')}}">Sucursales</a></li>
 	            <li><a href="{{url('consultarClientes')}}">Clientes</a></li>
 	            <li><a href="{{url('consultarCajas')}}">Cajas</a></li>
+	            <li><a href="{{url('consultarPacientes')}}">Pacientes</a></li>
 	          </ul>
 	        </li>
 	      @endhasrole

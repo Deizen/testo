@@ -80,6 +80,20 @@ Route::get('/editarCaja/{id}','cajasController@editarCaja');
 
 Route::post('/actualizarCaja/{id}','cajasController@actualizarCaja');
 
+//Pacientes
+
+Route::get('/consultarPacientes','pacientesController@consultarPacientes');
+
+Route::get('/registrarPaciente','pacientesController@registrarPaciente');
+
+Route::post('/guardarPaciente','pacientesController@guardarPaciente');
+
+Route::get('/eliminarPaciente/{id}','pacientesController@eliminarPaciente');
+
+Route::get('/editarPaciente/{id}','pacientesController@editarPaciente');
+
+Route::post('/actualizarPaciente/{id}','pacientesController@actualizarPaciente');
+
 
 Route::get('/home', function () 
 {
