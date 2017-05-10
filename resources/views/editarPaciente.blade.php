@@ -63,10 +63,9 @@
 			</select>
 
 			<select name="año" class="form-control" required autofocus style="width: 85px; display: inline-block;">
-			<option value="{{$año}}" placeholder selected>{{$año}}</option>
 				@for($i=1910; $i<=2017; $i++)
 				{
-					<option value="{{ $i}}">{{$i}}</option>
+					<option <?php if($año==$i) echo 'selected' ; ?> value="{{$año}}">{{$año}}</option>
 				}
 				@endfor
 			</select>
