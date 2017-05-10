@@ -28,8 +28,8 @@
 			<label for="sexo">Sexo:</label>
 			<select name="sexo" class="form-control" required autofocus>
 				<option value="" selected>Seleccione Sexo</option>
-				<option value="0">Femenino</option>
-				<option value="1">Masculino</option>
+				<option value="Femenino">Femenino</option>
+				<option value="Masculino">Masculino</option>
 			</select>
 		</div>
 		<div class="form-group">
