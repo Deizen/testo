@@ -94,6 +94,33 @@ Route::get('/editarPaciente/{id}','pacientesController@editarPaciente');
 
 Route::post('/actualizarPaciente/{id}','pacientesController@actualizarPaciente');
 
+//Parametros
+
+Route::get('/consultarParametros','parametrosController@consultarParametros');
+
+Route::get('/registrarParametro','parametrosController@registrarParametro');
+
+Route::post('/guardarParametro','parametrosController@guardarParametro');
+
+Route::get('/eliminarParametro/{id}','parametrosController@eliminarParametro');
+
+Route::get('/editarParametro/{id}','parametrosController@editarParametro');
+
+Route::post('/actualizarParametro/{id}','parametrosController@actualizarParametro');
+
+//Valores
+
+Route::get('/consultarValoresReferencia','valoresController@consultarValoresReferencia');
+
+Route::get('/registrarValorReferencia','valoresController@registrarValorReferencia');
+
+Route::post('/guardarValorReferencia','valoresController@guardarValorReferencia');
+
+Route::get('/eliminarValorReferencia/{id}','valoresController@eliminarValorReferencia');
+
+Route::get('/editarValorReferencia/{id}','valoresController@editarValorReferencia');
+
+Route::post('/actualizarValorReferencia/{id}','valoresController@actualizarValorReferencia');
 
 Route::get('/home', function () 
 {
