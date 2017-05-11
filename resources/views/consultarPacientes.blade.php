@@ -8,44 +8,31 @@
 
 @section('contenido')
 @hasrole('admin')
-	<div class="col-xs-12">
+<link rel="stylesheet" href="{{asset("css/style.css")}}">
+	<div class="col-xs-">
 		<table class="table table-striped table-hover">
 			<thead>
 			<tr>
-				<th>ID</th>
-				<th>Nombre</th>
-				<th>Apellido Paterno</th>
-				<th>Apellido Materno</th>
-				<th>Sexo</th>
-				<th>Fecha de Nacimiento</th>
-				<th>Telefono</th>
-				<th>Email</th>
-				<th>Direccion</th>
-				<th>Estado</th>
-				<th>Municipio</th>
-				<th>Localidad</th>
-				<th>
-					<a href="{{url('/registrarPaciente')}}" class="btn btn-info">Agregar Paciente</a>
-				</th>
+				<th >ID</th>
+				<th >Nombre</th>
+				<th >Edad</th>
+				<th >Telefono</th>
+				<th >Email</th>
+				<th >Detalles</th>
+				<th></th>
 				</tr>
 			</thead>
 			<tbody>
 				@foreach($pacientes as $p)
 					<tr>
 						<td>{{$p->id}}</td>
-						<td>{{$p->nombre}}</td>
-						<td>{{$p->apellido_P}}</td>
-						<td>{{$p->apellido_M}}</td>
-						<td>{{$p->sexo}}</td>
-						<td>{{$p->fecha_Nac}}</td>
+						<td>{{$p->nombre. " " . $p->apellido_P . " " . $p->apellido_M}}</td>
+						<td>{{date('Y-m-d') - $p->fecha_Nac}}</td>
 						<td>{{$p->telefono}}</td>
 						<td>{{$p->email}}</td>
-						<td>{{$p->direccion}}</td>
-						<td>{{$p->estado}}</td>
-						<td>{{$p->municipio}}</td>
-						<td>{{$p->localidad}}</td>
+						<td onmouseover="this.select()">{{$p->direccion. ", " . $p->municipio . ", " . $p->estado}}</td>
 						<td>
-						<a href="{{url('/editarPaciente')}}/{{$p->id}}" class="btn btn-xs btn-primary">
+						<a href="{{url('/editarPaciente')}}/{{$p->id}}" class="btn btn-xs btn-info">
 								  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 							</a>
 
@@ -59,6 +46,9 @@
 				</div>
 			</tbody>
 		</table>
+		<div style="text-align: center;">
+		<input type="button" a href="{{url('/registrarPaciente')}}" class="btn btn-primary btn-smn" value="Agregar Paciente">
+		</div>
 	</div>
 @else
     <div class="jumbotron">
