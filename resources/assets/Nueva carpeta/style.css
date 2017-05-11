@@ -1,0 +1,86 @@
+
+label[for=nombre]
+{
+	width: 32%;
+	text-align: left;
+}
+
+label[for=apellido_P]
+{
+	text-align: center;
+}
+
+label[for=apellido_M]
+{
+	text-align: right;
+}
+label[for=estado],[for=municipio]
+{
+	margin-right: 300px;
+}
+
+/*Inputs */
+#nom
+{
+	width: 401px;
+	display: inline-block;
+	margin-right: 90px;
+}
+
+#ap
+{
+	width: 260px;
+	display: inline-block;
+	margin-right: 90px;
+}
+
+#am
+{
+	width: 260px;
+	display: inline-block;
+}
+
+/*Select */
+#sexo
+{
+	width: 200px;
+}
+#dia
+{
+	width: 70px;
+	display: inline-block;
+}
+
+#mes
+{
+	width: 140px;
+	display: inline-block;
+}
+
+#año
+{
+	width: 85px;
+	display: inline-block;
+}
+
+#edo, #muni
+{
+	width: 200px;
+	display: inline-block;
+	margin-right: 149px;
+}
+
+#loca
+{
+	width: 403px;
+	display: inline-block;
+}
+
+#div1, #div2, #div3, #div4, #div5, #div6, #div7
+{
+	float: left;
+	margin: 5px;
+	padding: 15px;
+	max-width: 300px;
+	height: 300px;
+}

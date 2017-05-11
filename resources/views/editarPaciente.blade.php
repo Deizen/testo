@@ -94,10 +94,11 @@
 			<label for="localidad">Localidad:</label>
 			<input name="localidad" type="text" value="{{$pacientes->localidad}}" class="form-control" required autofocus>
 		</div>
-		<button type="submit" class="btn btn-primary">Guardar</button>
+		<button type="submit" class="btn btn-primary" ">Guardar</button>
 		<a href="{{url('/consultarPacientes')}}" class="btn btn-danger">Cancelar</a>
 	</form>
 </div>
+
 @else
     <div class="jumbotron">
         <h1>Error - Pagina no encontrada</h1>

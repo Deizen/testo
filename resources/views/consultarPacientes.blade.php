@@ -9,8 +9,9 @@
 @section('contenido')
 @hasrole('admin')
 	<div class="col-xs-12">
-		<table class="table table-hover">
+		<table class="table table-striped table-hover">
 			<thead>
+			<tr>
 				<th>ID</th>
 				<th>Nombre</th>
 				<th>Apellido Paterno</th>
@@ -24,8 +25,9 @@
 				<th>Municipio</th>
 				<th>Localidad</th>
 				<th>
-					<a href="{{url('/registrarPaciente')}}" class="btn btn-success">Nuevo Paciente</a>
+					<a href="{{url('/registrarPaciente')}}" class="btn btn-info">Agregar Paciente</a>
 				</th>
+				</tr>
 			</thead>
 			<tbody>
 				@foreach($pacientes as $p)
@@ -58,7 +60,6 @@
 			</tbody>
 		</table>
 	</div>
-
 @else
     <div class="jumbotron">
         <h1>Error - Pagina no encontrada</h1>

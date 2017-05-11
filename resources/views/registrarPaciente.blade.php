@@ -2,7 +2,7 @@
 
 @section('titulo')
 @hasrole('admin')
-	<h2>Nuevo Paciente</h2>
+	<h2>Agregar Paciente</h2>
 	<hr>
 @endhasrole
 @stop
