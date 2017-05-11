@@ -108,6 +108,20 @@ Route::get('/editarParametro/{id}','parametrosController@editarParametro');
 
 Route::post('/actualizarParametro/{id}','parametrosController@actualizarParametro');
 
+//Valores
+
+Route::get('/consultarValoresReferencia','valoresController@consultarValoresReferencia');
+
+Route::get('/registrarValorReferencia','valoresController@registrarValorReferencia');
+
+Route::post('/guardarValorReferencia','valoresController@guardarValorReferencia');
+
+Route::get('/eliminarValorReferencia/{id}','valoresController@eliminarValorReferencia');
+
+Route::get('/editarValorReferencia/{id}','valoresController@editarValorReferencia');
+
+Route::post('/actualizarValorReferencia/{id}','valoresController@actualizarValorReferencia');
+
 Route::get('/home', function () 
 {
     return view('home');
