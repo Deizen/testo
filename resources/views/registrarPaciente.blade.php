@@ -35,7 +35,7 @@
 		<div class="form-group">
 			<label for="fecha_Nac">Fecha de Nacimiento:</label>
 			<br>
-			<select name="dia" class="form-control" required autofocus style="width: 70px; display: inline-block;">
+			<select name="dia" class="form-control" required autofocus style="width: 80px; display: inline-block;">
 				<option value="" selected>Dia</option>
 					@for($i=1; $i<=31; $i++)
 					{
@@ -58,7 +58,7 @@
 				<option value="11">Noviembre</option>
 				<option value="12">Diciembre</option>
 			</select>
-			<select name="año" class="form-control" required autofocus style="width: 85px; display: inline-block;">
+			<select name="año" class="form-control" required autofocus style="width: 90px; display: inline-block;">
 			<option value="" selected>Año</option>
 				@for($i=1910; $i<=2017; $i++)
 				{
