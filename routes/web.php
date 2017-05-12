@@ -94,6 +94,8 @@ Route::get('/editarPaciente/{id}','pacientesController@editarPaciente');
 
 Route::post('/actualizarPaciente/{id}','pacientesController@actualizarPaciente');
 
+Route::get('/pacientesPDF', 'pacientesController@pacientesPDF');
+
 //Parametros
 
 Route::get('/consultarParametros','parametrosController@consultarParametros');

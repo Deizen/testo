@@ -66,7 +66,7 @@
 				}
 				@endfor
 			</select>
-		</div>
+		</div>		
 		<div class="form-group">
 			<label for="telefono">Telefono:</label>
 			<input name="telefono" type="text" placeholder="Teclee Telefono" class="form-control" required autofocus>
@@ -90,6 +90,15 @@
 		<div class="form-group">
 			<label for="localidad">Localidad:</label>
 			<input name="localidad" type="text" placeholder="Teclee Localidad" class="form-control" required autofocus>
+		</div>
+		<div class="form-group">
+			<label for="empresa">Empresa:</label>
+			<select name="empresa" class="form-control" required autofocus>
+			<option value="" selected>Seleccione Empresa</option>
+			@foreach($empresas as $e)
+				<option value="{{$e->id}}">{{$e->nombre}}</option>
+			@endforeach
+			</select>
 		</div>
 		<button type="submit" class="btn btn-primary">Registrar</button>
 		<a href="{{url('/')}}" class="btn btn-danger">Cancelar</a>
