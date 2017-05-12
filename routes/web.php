@@ -124,6 +124,11 @@ Route::get('/editarValorReferencia/{id}','valoresController@editarValorReferenci
 
 Route::post('/actualizarValorReferencia/{id}','valoresController@actualizarValorReferencia');
 
+//Examenes
+Route::get('/registrarExamen','examenesController@registrarExamen');
+
+Route::get('/consultarExamenes','examenesController@consultarExamenes');
+
 Route::get('/home', function () 
 {
     return view('home');
