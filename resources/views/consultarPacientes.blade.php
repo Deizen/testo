@@ -4,6 +4,9 @@
 @hasrole('admin')
 	<div>
 		<h2 style="float: left;">Pacientes
+		<a href="{{url('/imprimirListado')}}">
+		<span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+	</a>
 		</h2>
 		<div style="float: right; position: relative; top: 10px;">
 			<a href="{{url('/registrarPaciente')}}" class="btn btn-primary">Agregar</a>
@@ -43,7 +46,7 @@
 								  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 							</a>
 								<button type="button" class="btn btn-danger btn-xs" title="Eliminar" data-toggle="modal" data-target="#myModal" data="{{$p->id}}">
-									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+									<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 								</button>
 						</td>
 
