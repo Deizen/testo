@@ -79,23 +79,27 @@ class pacientesController extends Controller
         
         return Redirect('/consultarPacientes');
     }
-        public function pacientesPDF()
+
+        public function pacientesClientesPDF($id)
         {
-            $pacientes=Pacientes::all();
-            $vista=view('pacientesPDF', compact('pacientes'));
-            $dompdf=\App::make('dompdf.wrapper');
-            $dompdf->loadHTML($vista);
-            return $dompdf->stream('reporte.pdf');
-        }
-        public function carreraAlumnosPDF($id)
-        {
-            $pacientes=DB::table('pacientes')
-                ->where('id_cliente', '=', $id)
-                ->get();
-            $clientes=Clientes::find($id);
-            $vista=view('pacientesClientesPDF', compact('pacientes', 'clientes'));
-            $dompdf=\App::make('dompdf.wrapper');
-            $dompdf->loadHTML($vista);
+            if ($id==0) 
+            {
+                $pacientes=Pacientes::all();
+                $vista=view('pacientesPDF', compact('pacientes'));
+                $dompdf=\App::make('dompdf.wrapper');
+                $dompdf->loadHTML($vista);
+                return $dompdf->stream('reporte.pdf');
+            }
+            else
+            {
+                $pacientes=DB::table('pacientes')
+                    ->where('id_cliente', '=', $id)
+                    ->get();
+                $clientes=Clientes::find($id);
+                $vista=view('pacientesClientesPDF', compact('pacientes', 'clientes'));
+                $dompdf=\App::make('dompdf.wrapper');
+                $dompdf->loadHTML($vista);
+            }
             return $dompdf->stream('lista.pdf');
         }
 }
